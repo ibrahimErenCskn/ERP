@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="Css/finansYönetimi.css">
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Finans Yönetimi</title>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+</head>
+<body>
+  <h2>Finans Yönetimi</h2>
+  
+  <h3>Gelir ve Gider Tablosu</h3>
+  <table id="gelir-gider">
+    <thead>
+      <tr>
+        <th>Açıklama</th>
+        <th>Tutar</th>
+        <th>Türü</th>
+        <th>İşlem</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Kullanıcının eklediği gelir/giderler burada listelenecek -->
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>
+          <input type="text" id="aciklama" placeholder="Açıklama">
+        </td>
+        <td>
+          <input type="number" id="tutar" placeholder="Tutar">
+        </td>
+        <td>
+          <select id="tur">
+            <option value="gelir">Gelir</option>
+            <option value="gider">Gider</option>
+          </select>
+        </td>
+        <td>
+          <button id="send">Ekle</button>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+  
+  <h3>Nakit Akış Tablosu</h3>
+  <table id="nakit-akis">
+    <thead>
+      <tr>
+        <th>Açıklama</th>
+        <th>Gelir</th>
+        <th>Gider</th>
+        <th>Bakiye</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Nakit akışı hesaplamaları burada gösterilecek -->
+    </tbody>
+  </table> 
+  <script src="JavaScript/finans.js"></script> 
+</body>

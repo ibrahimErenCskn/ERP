@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Benim Web Sayfam</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="Css/bilgilerim.css">
+	<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<h1>Kişisel Bilgilerim</h1>
+		</div>
+	</header>
+	<main>
+		<section id="contact">
+			<div class="container">
+				<div class="form-control">
+					<label for="username">Kullanıcı Adı</label>
+					<input type="text" id="username" name="username" value="" readonly/>
+				  </div>
+				  <div class="form-control">
+					<label for="email">E-Posta Adresi</label>
+					<input type="email" id="email" name="email" required />
+				  </div>
+				  <div class="form-control">
+					<label for="password">Şifre</label>
+					<input type="password" id="password" name="password" required />
+				  </div>
+				  <div class="form-control">
+					<label for="No">Tel No</label>
+					<input type="text" id="No" name="No" required />
+				  </div>
+				  <div class="form-control">
+					<label for="name1">İş Yeri Adı</label>
+					<input type="text" id="name1" name="name1" required />
+				  </div>
+				  <button type="submit" class="btn" id="send_">Güncelle</button>
+			</div>
+		</section>
+	</main>
+	<footer>
+		<div class="container">
+			<p>Telif Hakkı &copy; 2023 Kişisel Bilgilerim. Tüm hakları saklıdır.</p>
+		</div>
+	</footer>
+</body>
+<script src="JavaScript/bilgilerim.js"></script>
+</html>
+

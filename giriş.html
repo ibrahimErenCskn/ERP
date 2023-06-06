@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GİRİŞ SAYFASI</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Css/giriş.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Giriş Yap</h1>
+        <div class="form-control">
+          <label for="username">Kullanıcı Adı</label>
+          <input type="text" id="username" name="username" required />
+        </div>
+        <div class="form-control">
+          <label for="password">Şifre</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <button type="submit" class="btn" id="send">Giriş Yap</button>
+      <p class="register-link">Henüz hesabınız yok mu? <a href="kayıt.html">Kayıt Ol</a></p>
+    </div>
+  </body>
+  <script src="JavaScript/giris.js"></script>
+</html>
