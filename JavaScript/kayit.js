@@ -30,9 +30,19 @@ document.querySelector("#send").addEventListener("click",()=>{
         if (document.getElementById("email").value == "" || 
         document.getElementById("password").value == "" ||
         document.getElementById("No").value == "" ||
-        document.getElementById("name1").value == ""
+        document.getElementById("name1").value == ""||
+        document.getElementById("username").value == ""
         ){
-            console.log("Boş Bırakma")
+            // Div'i seçmek için id'sini kullanabiliriz
+            var div = document.getElementById("doldur");
+            div.innerHTML = '';
+            // H1 etiketini oluşturun
+            var h1 = document.createElement("h1");
+            // H1 etiketine metin ekleyin
+            var text = document.createTextNode("Bütün alanları eksiksiz doldurunuz.");
+            h1.appendChild(text);
+            // H1 etiketini div'in içine ekleyin
+            div.appendChild(h1);
         }else{
             const username = document.getElementById("username").value;
             const email = document.getElementById("email").value;
@@ -75,7 +85,16 @@ document.querySelector("#send").addEventListener("click",()=>{
         }
     }
     else{
-        console.log("geçerli değil")
+            // Div'i seçmek için id'sini kullanabiliriz
+            var div = document.getElementById("doldur");
+            div.innerHTML = '';
+            // H1 etiketini oluşturun
+             var h1 = document.createElement("h1");
+            // H1 etiketine metin ekleyin
+            var text = document.createTextNode("Eposta adresini düzgün giriniz.");
+            h1.appendChild(text);
+                // H1 etiketini div'in içine ekleyin
+            div.appendChild(h1);
     }
   }
 )

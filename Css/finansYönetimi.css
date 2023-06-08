@@ -17,7 +17,7 @@ body {
     border-collapse: collapse;
     width: 100%;
     margin: 30px 0;
-    background-color: #00377b;
+    background-color: white;
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
   }
   
@@ -32,8 +32,6 @@ body {
   }
   
   tr:nth-child(even) {
-    color: #0077B6;
-    font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
   }
   
@@ -64,7 +62,6 @@ body {
   
   input[type=text], input[type=number] {
     padding: 10px;
-    border: none;
     border-radius: 5px;
     width: 100%;
     box-sizing: border-box;
@@ -72,7 +69,6 @@ body {
   
   input[type=submit] {
     background-color: #0077B6;
-    border: none;
     padding: 10px 20px;
     margin-top: 20px;
     cursor: pointer;

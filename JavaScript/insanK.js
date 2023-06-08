@@ -88,3 +88,23 @@ document.querySelector("#send").addEventListener("click",()=>{
         })
     })
 })
+
+document.querySelector("#remove").addEventListener("click",()=>{
+    var Sira = document.getElementById("removeid").value;
+    database.ref("Giris").once('value').then(function(snapshot) {
+        var data = snapshot.val();
+        var name = Object.values(data)[0]["name"];
+        database.ref(name+"/insanKaynaklari").once('value').then(function(snapshot) {
+            var removedata = snapshot.val();
+            var removeBilgi = Object.values(removedata);
+            for (let i = 0; i < removeBilgi.length; i++) {
+                if (removeBilgi[i]["ad"]==Sira) {
+                    removeDataRef = database.ref(name+"/insanKaynaklari/"+Object.keys(removedata)[i])
+                        removeDataRef.remove()
+                        location.href = location.href;
+                        break
+                }
+            }
+        })
+    })
+})

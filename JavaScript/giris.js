@@ -43,7 +43,16 @@ document.querySelector("#send").addEventListener("click",()=>{
         firebaseRef.push(veri);
       }else{
 
-        console.log("Kullanıcı adı Veya Şİfre Uymuyor");
+        // Div'i seçmek için id'sini kullanabiliriz
+        var div = document.getElementById("doldur");
+        div.innerHTML = '';
+        // H1 etiketini oluşturun
+        var h1 = document.createElement("h1");
+        // H1 etiketine metin ekleyin
+        var text = document.createTextNode("Kullanıcı adı veya şifre yanlış.");
+        h1.appendChild(text);
+        // H1 etiketini div'in içine ekleyin
+        div.appendChild(h1);
 
       }
     }

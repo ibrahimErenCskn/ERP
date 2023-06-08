@@ -82,6 +82,7 @@ document.querySelector("#send_").addEventListener("click",()=>{
         
               }
             }
+            location.href = location.href
           })
         
         }).catch(function(error) {

@@ -13,12 +13,12 @@ firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
 
 database.ref("Giris").once('value').then(function(snapshot) {
-    var data = snapshot.val();
-    var name = Object.values(data)[0]["name"];
+    var a = snapshot.val();
+    var name = Object.values(a)[0]["name"];
     database.ref(name+"/Finans").once('value').then(function(snapshot) {
         var data = snapshot.val();
         var finansBilgi = Object.values(data);
-        console.log(finansBilgi)
+    
     
         var table = document.getElementById("nakit-akis");
         var tbody = table.tBodies[0];
@@ -61,7 +61,6 @@ document.querySelector("#send").addEventListener("click",()=>{
         database.ref(name+"/Finans").once('value').then(function(snapshot) {
             var data = snapshot.val();
             var finansBilgi = Object.values(data);
-            console.log(finansBilgi)
         
             var table = document.getElementById("nakit-akis");
             var tbody = table.tBodies[0];
@@ -83,6 +82,27 @@ document.querySelector("#send").addEventListener("click",()=>{
                 cell2.innerHTML = finansBilgi[i]["GelirGider"];
                 cell3.innerHTML = finansBilgi[i]["GelirGider"];
                 cell4.innerHTML = finansBilgi[i]["Tutar"];
+            }
+        })
+    })
+})
+
+document.querySelector("#remove").addEventListener("click",()=>{
+    var Sira = document.getElementById("removeid").value;
+    database.ref("Giris").once('value').then(function(snapshot) {
+        var data = snapshot.val();
+        var name = Object.values(data)[0]["name"];
+        database.ref(name+"/Finans").once('value').then(function(snapshot) {
+            var removedata = snapshot.val();
+            var removeBilgi = Object.values(removedata);
+            for (let i = 0; i < removeBilgi.length; i++) {
+                if (removeBilgi[i]["Aciklama"]==Sira) {
+                    removeDataRef = database.ref(name+"/Finans/"+Object.keys(removedata)[i])
+                        console.log(name+"/Finans/"+Object.keys(removedata)[i])
+                        removeDataRef.remove()
+                        location.href = location.href;
+                        break
+                }
             }
         })
     })
